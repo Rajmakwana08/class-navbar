@@ -1,0 +1,120 @@
+/* Import Poppins Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reset margins, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body styles */
+body {
+    min-height: 100vh;
+    background: url('bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header / Navbar glass effect */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(255, 255, 255, .1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    z-index: 1000;
+}
+
+/* Header hover effect with gradient animation */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s;
+}
+
+.header:hover::before {
+    left: 100%;
+}
+
+/* Logo styles */
+.logo {
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+}
+
+/* Navbar link styles */
+.navbar a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+/* Navbar hover effect */
+.navbar a:hover {
+    color: #9400d3;
+}
+
+/* ---------------------------- */
+/* RESPONSIVE DESIGN BEGINS HERE */
+/* ---------------------------- */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 50px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        margin-left: 25px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        margin-top: 10px;
+    }
+
+    .navbar a {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+}
